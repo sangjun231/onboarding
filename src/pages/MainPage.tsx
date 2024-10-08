@@ -8,13 +8,15 @@ const Home = () => {
   if (error) return <div>Error loading todos</div>;
 
   return (
-    <ul>
-      {todos.map((todo: Todo) => (
-        <li key={todo.id}>
-          userId:{todo.userId} id:{todo.id} {todo.title} {`${todo.completed}`}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul>
+        {todos.map((todo: Todo) => (
+          <li key={todo.id}>
+            userId:{todo.userId} id:{todo.id} {todo.title} {`${todo.completed}`}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

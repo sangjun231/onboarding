@@ -3,11 +3,7 @@ import { ReactNode } from "react";
 
 const queryClient = new QueryClient();
 
-type QueryProviderProps = {
-  children: ReactNode;
-};
-
-const QueryProvider = ({ children }: QueryProviderProps) => {
+const QueryProvider = ({ children }: { children: ReactNode }) => {
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
