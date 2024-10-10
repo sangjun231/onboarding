@@ -21,9 +21,9 @@ export const useLogin = () => {
 
 export const useRegister = () => {
   return useMutation<
-    { message: string; success: boolean }, // 성공 시 반환될 데이터 타입
+    { message: string; success: boolean },
     Error,
-    { id: string; password: string; nickname: string } // mutation 함수에 전달될 변수 타입
+    { id: string; password: string; nickname: string }
   >({
     mutationFn: ({ id, password, nickname }) =>
       registerUser(id, password, nickname),
