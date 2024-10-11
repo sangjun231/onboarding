@@ -8,8 +8,8 @@ const Home = () => {
   if (error) return <div>Error loading todos</div>;
 
   return (
-    <div className="text-blue-500">
-      <ul>
+    <div>
+      <ul className="flex flex-col items-center space-y-2 text-gray-800">
         {todos.map((todo: Todo) => (
           <li key={todo.id}>
             userId:{todo.userId} id:{todo.id} {todo.title} {`${todo.completed}`}

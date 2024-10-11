@@ -38,25 +38,35 @@ const MyPage = () => {
 
   return (
     <div>
-      <h1>마이페이지</h1>
+      <div>
+        <p className="font-bold flex justify-center">마이페이지</p>
+      </div>
       {user && (
-        <div>
+        <div className="flex flex-col items-center my-4 space-y-2">
           <img src={user.avatar || ""} alt="프로필 이미지" width="100" />
           <p>닉네임: {user.nickname}</p>
         </div>
       )}
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={nickname}
-          onChange={(e) => setNickname(e.target.value)}
-          placeholder="닉네임"
-        />
-        <input
-          type="file"
-          onChange={(e) => setAvatar(e.target.files?.[0] || null)}
-        />
-        <button type="submit">프로필 업데이트</button>
+        <div className="flex justify-center space-x-2">
+          <input
+            className="border p-2 rounded-md"
+            type="text"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            placeholder="닉네임"
+          />
+          <input
+            className="border p-2 rounded-md"
+            type="file"
+            onChange={(e) => setAvatar(e.target.files?.[0] || null)}
+          />
+        </div>
+        <div className="flex justify-center">
+          <button className="border mt-4 p-2 rounded-md" type="submit">
+            프로필 업데이트
+          </button>
+        </div>
       </form>
     </div>
   );

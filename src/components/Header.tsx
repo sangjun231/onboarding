@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <nav>
-        <ul className="flex bg-black">
-          <li className="text-lg">
+      <nav className="flex justify-center items-center">
+        <ul className="flex space-x-4 m-4">
+          <li>
             <Link to="/">Home</Link>
           </li>
           <li>
