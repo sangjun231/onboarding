@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <ul>
-          <li>
+        <ul className="flex bg-black">
+          <li className="text-lg">
             <Link to="/">Home</Link>
           </li>
           <li>

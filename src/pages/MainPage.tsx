@@ -8,7 +8,7 @@ const Home = () => {
   if (error) return <div>Error loading todos</div>;
 
   return (
-    <div>
+    <div className="text-blue-500">
       <ul>
         {todos.map((todo: Todo) => (
           <li key={todo.id}>
