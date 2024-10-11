@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { useUserStore } from "../stores/userStore";
+import { toast } from "react-toastify";
 
 const Header = () => {
+  const accessToken = useUserStore((state) => state.accessToken);
+  const logout = useUserStore((state) => state.logout);
+
   return (
     <header>
       <nav className="flex justify-center items-center">
@@ -8,12 +13,27 @@ const Header = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
+          {!accessToken ? (
+            <>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+            </>
+          ) : (
+            <li>
+              <button
+                onClick={() => {
+                  logout();
+                  toast.success("로그아웃 되었습니다.");
+                }}
+              >
+                Logout
+              </button>
+            </li>
+          )}
           <li>
             <Link to="/MyPage">My Page</Link>
           </li>
