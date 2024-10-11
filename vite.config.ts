@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   test: {
-    globals: true,
-    environment: "jsdom",
+    globals: true, // 글로벌 테스트 환경 설정
+    environment: "jsdom", // 브라우저 환경에서 테스트
   },
 });
